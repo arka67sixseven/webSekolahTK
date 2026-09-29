@@ -16,7 +16,7 @@ export function BingkaiBalok({
 }: {
   children: React.ReactNode;
   /** Warna blok miring yang muncul di pojok bingkai. */
-  warna?: "hijau" | "kunyit" | "terong";
+  warna?: "hijau" | "kunyit" | "daun";
   /** Sudut kemiringan blok, dalam derajat. */
   miring?: number;
   className?: string;
@@ -39,5 +39,5 @@ export function BingkaiBalok({
 const WARNA = {
   hijau: "bg-hijau-300",
   kunyit: "bg-kunyit-300",
-  terong: "bg-terong-300",
+  daun: "bg-hijau-200",
 } as const;

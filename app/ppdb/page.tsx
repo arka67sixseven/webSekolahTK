@@ -155,7 +155,7 @@ function BagianTahapan() {
                 <h3 className="font-display text-lg font-bold text-hijau-900">
                   {t.tahap}
                 </h3>
-                <p className="text-sm font-semibold text-terong-600">
+                <p className="text-sm font-semibold text-hijau-700">
                   {t.waktu}
                 </p>
               </div>
@@ -189,7 +189,7 @@ function BagianFaq() {
                 {f.tanya}
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 shrink-0 text-terong-500 transition-transform duration-200 group-open:rotate-45"
+                  className="mt-0.5 shrink-0 text-hijau-600 transition-transform duration-200 group-open:rotate-45"
                 >
                   +
                 </span>

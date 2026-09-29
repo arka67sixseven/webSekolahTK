@@ -10,7 +10,7 @@ export type SlotWaktu = {
   jam: string;
   kegiatan: string;
   keterangan: string;
-  warna: "hijau" | "kunyit" | "terong";
+  warna: "hijau" | "kunyit" | "daun";
 };
 
 export const jadwalSehari: SlotWaktu[] = [
@@ -30,7 +30,7 @@ export const jadwalSehari: SlotWaktu[] = [
     jam: "08.30 - 09.00",
     kegiatan: "Awal Belajar",
     keterangan: "Doa, senam, dan pemanasan gerak.",
-    warna: "terong",
+    warna: "daun",
   },
   {
     jam: "09.00 - 10.00",
@@ -48,7 +48,7 @@ export const jadwalSehari: SlotWaktu[] = [
     jam: "10.30 - 11.15",
     kegiatan: "Kokurikuler",
     keterangan: "Musik, seni, atau latihan motorik.",
-    warna: "terong",
+    warna: "daun",
   },
   {
     jam: "11.15 - 12.00",
@@ -68,7 +68,7 @@ export type Kegiatan = {
   id: string;
   nama: string;
   jadwal: string;
-  warna: "hijau" | "kunyit" | "terong";
+  warna: "hijau" | "kunyit" | "daun";
   isi: string;
 };
 
@@ -77,7 +77,7 @@ export const kokurikuler: Kegiatan[] = [
     id: "musik",
     nama: "Musik dan Gerak",
     jadwal: "Setiap Rabu",
-    warna: "terong",
+    warna: "daun",
     isi: "Anak belajar irama, bergerak mengikuti nada, dan berani tampil.",
   },
   {

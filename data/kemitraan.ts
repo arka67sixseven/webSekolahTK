@@ -12,7 +12,7 @@ export type BentukKemitraan = {
   nama: string;
   waktu: string;
   isi: string;
-  warna: "hijau" | "kunyit" | "terong";
+  warna: "hijau" | "kunyit" | "daun";
 };
 
 export const bentukKemitraan: BentukKemitraan[] = [
@@ -35,7 +35,7 @@ export const bentukKemitraan: BentukKemitraan[] = [
     nama: "Kunjungan ke kelas",
     waktu: "Setiap semester",
     isi: "Orang tua datang ke kelas, melihat langsung kegiatan anak, dan mencoba bermain bersama.",
-    warna: "terong",
+    warna: "daun",
   },
   {
     id: "pertemuan-kelas",

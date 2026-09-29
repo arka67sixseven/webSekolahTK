@@ -46,7 +46,7 @@ export function KartuBerita({
         </span>
       </div>
       <div className="p-5">
-        <p className="text-xs font-bold tracking-wide text-terong-600 uppercase">
+        <p className="text-xs font-bold tracking-wide text-hijau-700 uppercase">
           <time dateTime={b.tanggalIso}>{b.tanggal}</time>
         </p>
         <Tag className="mt-2 font-display text-lg leading-snug font-bold text-hijau-900">

@@ -128,7 +128,7 @@ function BagianFoto({ foto }: { foto: typeof galeri }) {
                 />
               )}
               <figcaption className="p-5">
-                <p className="text-xs font-bold tracking-wide text-terong-600 uppercase">
+                <p className="text-xs font-bold tracking-wide text-hijau-600 uppercase">
                   {f.kategori}
                 </p>
                 <h3 className="mt-1 font-display text-lg font-bold text-hijau-900">

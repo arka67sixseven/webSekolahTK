@@ -59,7 +59,7 @@ export default async function HalamanBeritaDetail({ params }: Params) {
             <span className="rounded-full bg-hijau-100 px-3 py-1 text-hijau-800">
               {b.jenis}
             </span>
-            <time dateTime={b.tanggalIso} className="text-terong-600">
+            <time dateTime={b.tanggalIso} className="text-hijau-700">
               {b.tanggal}
             </time>
           </p>

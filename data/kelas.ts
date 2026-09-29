@@ -12,7 +12,7 @@ export type Kelompok = {
   usia: string;
   jumlahAnak: number;
   jumlahGuru: number;
-  warna: "hijau" | "kunyit" | "terong";
+  warna: "hijau" | "kunyit" | "daun";
   fokus: string;
   kegiatanUtama: string[];
 };
@@ -54,7 +54,7 @@ export const kelompok: Kelompok[] = [
     usia: "4 sampai 5 tahun",
     jumlahAnak: 12,
     jumlahGuru: 2,
-    warna: "terong",
+    warna: "daun",
     fokus: "Melatih mandiri dan berani mencoba di kelas.",
     kegiatanUtama: [
       "Menggunting kertas dengan aman",

@@ -58,7 +58,7 @@ function BagianSambutan() {
           />
         </BingkaiBalok>
         <div>
-          <p className="text-sm font-bold tracking-wide text-terong-600 uppercase">
+          <p className="text-sm font-bold tracking-wide text-hijau-700 uppercase">
             {sambutan.jabatan}
           </p>
           <h2 className="mt-2 font-display text-3xl font-extrabold text-hijau-900">

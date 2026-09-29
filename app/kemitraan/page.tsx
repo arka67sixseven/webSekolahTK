@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const WARNA = {
   hijau: "bg-hijau-100",
   kunyit: "bg-kunyit-100",
-  terong: "bg-terong-100",
+  daun: "bg-hijau-200",
 } as const;
 
 export default function HalamanKemitraan() {

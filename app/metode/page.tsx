@@ -39,13 +39,13 @@ export default function HalamanMetode() {
 const WARNA_TEKS: Record<WarnaTema, string> = {
   hijau: "text-hijau-800",
   kunyit: "text-kunyit-700",
-  terong: "text-terong-700",
+  daun: "text-hijau-900",
 };
 
 const WARNA_LATAR: Record<WarnaTema, string> = {
   hijau: "bg-hijau-100",
   kunyit: "bg-kunyit-100",
-  terong: "bg-terong-100",
+  daun: "bg-hijau-200",
 };
 
 function BagianPrinsip() {

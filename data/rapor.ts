@@ -11,7 +11,7 @@
 export type AspekRapor = {
   id: string;
   nama: string;
-  warna: "hijau" | "kunyit" | "terong";
+  warna: "hijau" | "kunyit" | "daun";
   deskripsi: string;
   contohPerilaku: string[];
 };
@@ -42,7 +42,7 @@ export const aspekRapor: AspekRapor[] = [
   {
     id: "bahasa",
     nama: "Bahasa dan Komunikasi",
-    warna: "terong",
+    warna: "daun",
     deskripsi: "Anak menyampaikan keinginan dan mendengarkan cerita.",
     contohPerilaku: [
       "Menyampaikan kebutuhan dengan kata-kata",

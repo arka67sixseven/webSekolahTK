@@ -15,7 +15,7 @@ export function PlaceholderFoto({
   className = "",
 }: {
   label?: string;
-  warna?: "hijau" | "kunyit" | "terong" | "kertas";
+  warna?: "hijau" | "kunyit" | "daun" | "kertas";
   aspect?: string;
   className?: string;
 }) {
@@ -38,6 +38,6 @@ export function PlaceholderFoto({
 const GAYA = {
   hijau: "bg-hijau-100",
   kunyit: "bg-kunyit-100",
-  terong: "bg-terong-100",
+  daun: "bg-hijau-200",
   kertas: "bg-kertas-200",
 } as const;

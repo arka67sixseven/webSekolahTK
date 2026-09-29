@@ -95,7 +95,7 @@ function BagianPrinsip() {
 const WARNA = {
   hijau: "bg-hijau-100 text-hijau-800",
   kunyit: "bg-kunyit-100 text-kunyit-800",
-  terong: "bg-terong-100 text-terong-800",
+  daun: "bg-hijau-200 text-hijau-900",
 } as const;
 
 function BagianAspek() {
@@ -203,6 +203,8 @@ function BagianContoh() {
                 </p>
                 <p className="mt-2 leading-relaxed text-ink">{c.kalimatBaik}</p>
               </div>
+              {/* Hijau terong/merah muda sengaja dipakai di sini: satu-satunya
+                  aksen peringatan "jangan/tidak" yang tersisa di situs. */}
               <div className="bg-terong-50 p-5">
                 <p className="text-xs font-bold tracking-wider text-terong-700 uppercase">
                   Jangan begini

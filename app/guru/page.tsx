@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   alternates: { canonical: `${site.url}/guru` },
 };
 
-const WARNA: Record<string, "hijau" | "kunyit" | "terong"> = {
+const WARNA: Record<string, "hijau" | "kunyit" | "daun"> = {
   hijau: "hijau",
   kunyit: "kunyit",
-  terong: "terong",
+  daun: "daun",
 };
 
 export default function HalamanGuru() {
@@ -46,7 +46,7 @@ function BagianDaftar() {
       />
       <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {guru.map((g, i) => {
-          const warna = WARNA[i % 3 === 0 ? "hijau" : i % 3 === 1 ? "kunyit" : "terong"];
+          const warna = WARNA[i % 3 === 0 ? "hijau" : i % 3 === 1 ? "kunyit" : "daun"];
           return (
             <li key={g.id} className="h-full">
               <BingkaiBalok
@@ -65,7 +65,7 @@ function BagianDaftar() {
                     <h2 className="font-display text-xl leading-tight font-bold text-hijau-900">
                       {g.nama}
                     </h2>
-                    <p className="mt-1 text-sm font-bold tracking-wide text-terong-600 uppercase">
+                    <p className="mt-1 text-sm font-bold tracking-wide text-hijau-700 uppercase">
                       {g.jabatan}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-ink-soft">

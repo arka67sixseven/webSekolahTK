@@ -17,7 +17,7 @@ const SUB = nav.find((n) => n.href === "/kegiatan")?.children ?? [];
 const WARNA = {
   hijau: { titik: "bg-hijau-500", teks: "text-hijau-800" },
   kunyit: { titik: "bg-kunyit-500", teks: "text-kunyit-800" },
-  terong: { titik: "bg-terong-500", teks: "text-terong-800" },
+  daun: { titik: "bg-hijau-400", teks: "text-hijau-900" },
 } as const;
 
 export default function HalamanKegiatan() {
@@ -169,12 +169,12 @@ function BagianMakanBersama() {
   return (
     <section
       id="makan-bersama"
-      className="scroll-mt-32 border-t-4 border-hijau-900 bg-terong-100 py-20"
+      className="scroll-mt-32 border-y-4 border-hijau-900 bg-hijau-50 py-20"
     >
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
-            <p className="inline-block rounded-full bg-terong-200 px-4 py-1 text-xs font-bold tracking-wider text-terong-800 uppercase">
+            <p className="inline-block rounded-full bg-hijau-200 px-4 py-1 text-xs font-bold tracking-wider text-hijau-900 uppercase">
               Makan bersama
             </p>
             <h2 className="mt-4 font-display text-3xl font-extrabold text-hijau-900">
@@ -199,7 +199,7 @@ function BagianMakanBersama() {
               >
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-terong-500 font-display text-xs font-extrabold text-white"
+                  className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-hijau-600 font-display text-xs font-extrabold text-white"
                 >
                   &#10003;
                 </span>

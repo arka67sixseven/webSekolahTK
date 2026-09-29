@@ -11,7 +11,7 @@
  *  - Permendikbudristek No. 13 Tahun 2022 tentang Capaian Pembelajaran PAUD
  */
 
-export type WarnaTema = "hijau" | "kunyit" | "terong";
+export type WarnaTema = "hijau" | "kunyit" | "daun";
 
 export type Metode = {
   id: string;
@@ -71,7 +71,7 @@ export const metode: Metode[] = [
       "Dapur kecil anak. Anak mengaduk, menuang, dan mencicipi bahan makanan nyata.",
       "Sudut cerita yang terjangkau dari posisi duduk anak.",
     ],
-    warna: "terong",
+    warna: "daun",
     ikon: "indra",
   },
   {
@@ -103,7 +103,7 @@ export const metode: Metode[] = [
       "Buku penghubung yang dibawa pulang setiap hari.",
       "Percakapan rutin kelas, bukan sekadar pengumuman.",
     ],
-    warna: "terong",
+    warna: "daun",
     ikon: "keluarga",
   },
 ];
@@ -135,7 +135,7 @@ export const elemenCapaian = [
   },
   {
     nama: "Berkarya",
-    warna: "terong" as const,
+    warna: "daun" as const,
     ringkas: "Anak menggunakan bahan untuk membuat sesuatu untuk dirinya sendiri.",
     contoh: [
       "Membuat bentuk dengan balok dan adonan",

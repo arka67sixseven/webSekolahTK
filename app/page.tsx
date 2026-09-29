@@ -83,7 +83,7 @@ function Hero() {
 const STATISTIK = [
   { angka: "3", label: "Kelompok belajar", warna: "bg-hijau-600" },
   { angka: "38", label: "Anak aktif", warna: "bg-kunyit-500" },
-  { angka: "5", label: "Pendidik", warna: "bg-terong-500" },
+  { angka: "5", label: "Pendidik", warna: "bg-hijau-500" },
   { angka: "1", label: "Halaman bermain", warna: "bg-hijau-800" },
 ];
 
@@ -143,7 +143,7 @@ function MetodeRingkas() {
 const GAYA = {
   hijau: "border-hijau-600 bg-hijau-50",
   kunyit: "border-kunyit-500 bg-kunyit-50",
-  terong: "border-terong-500 bg-terong-50",
+  daun: "border-hijau-400 bg-hijau-100",
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -310,7 +310,7 @@ function BeritaRingkas() {
                   ) : null}
                 </div>
                 <div className="p-5">
-                  <p className="text-xs font-bold tracking-wide text-terong-600 uppercase">
+                  <p className="text-xs font-bold tracking-wide text-hijau-700 uppercase">
                     {b.jenis} - {b.tanggal}
                   </p>
                   <h3 className="mt-2 font-display text-lg leading-snug font-bold text-hijau-900">
@@ -333,7 +333,7 @@ function BeritaRingkas() {
 function AjakanPpdb() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-20">
-      <BingkaiBalok warna="terong" miring={3} className="mx-auto max-w-3xl">
+      <BingkaiBalok warna="hijau" miring={3} className="mx-auto max-w-3xl">
         <div className="bg-hijau-900 p-8 text-center sm:p-12">
           <p className="inline-block rounded-full bg-kunyit-400 px-4 py-1 text-xs font-bold tracking-wider text-hijau-900 uppercase">
             PPDB {tahunPpdb}

@@ -29,7 +29,7 @@
   /* ---------------------------------------------------------------
      KUNYIT "SAFFRON" — aksen keemasan
      Di web SMP emas hanya goresan kecil; di sini kunyit jadi PERMUKAAN
-     utama: pita penuh, blok bingkai, tombol. Hines-emas yang menyala.
+     utama: pita penuh, blok bingkai, tombol. Kuning-emas yang menyala.
   --------------------------------------------------------------- */
   --color-kunyit-50: #fffaeb;
   --color-kunyit-100: #fff1c6;
@@ -44,8 +44,10 @@
   --color-kunyit-950: #331f04;
 
   /* ---------------------------------------------------------------
-     TERONG "CORAL" — hue ketiga, hanya untuk momen anak
-     (kartu kelompok, kegiatan, metode, PPD). Web SMP tidak punya padanannya.
+     TERONG "CORAL" — aksen LANKA, tidak dipakai sebagai permukaan
+     biasa lagi. Sisa satu penggunaan: peringatan "jangan/tidak" di
+     halaman rapor, supaya kontras dengan "tulis begini" yang hijau.
+     Tema ketiga untuk kartu kini memakai hijau, lihat catatan "daun".
   --------------------------------------------------------------- */
   --color-terong-50: #fff3f5;
   --color-terong-100: #ffe3e8;

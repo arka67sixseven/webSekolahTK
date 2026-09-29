@@ -50,7 +50,7 @@ function BagianKelompok() {
             key={k.id}
             className="flex flex-col rounded-[1.75rem] border-4 border-hijau-900 bg-white p-6"
           >
-            <p className="text-sm font-bold tracking-wide text-terong-600 uppercase">
+            <p className="text-sm font-bold tracking-wide text-hijau-700 uppercase">
               {k.usia}
             </p>
             <h3 className="mt-2 font-display text-3xl font-extrabold text-hijau-900">
