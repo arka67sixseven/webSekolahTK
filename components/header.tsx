@@ -55,7 +55,7 @@ function TombolPanalytics() {
   return (
     <Link
       href="/ppdb"
-      className="ml-auto hidden shrink-0 rounded-2xl bg-hijau-600 px-4 py-2.5 font-display text-sm font-bold whitespace-nowrap text-white transition-colors duration-200 hover:bg-hijau-700 sm:ml-0 sm:block"
+      className="hidden shrink-0 rounded-2xl bg-hijau-600 px-4 py-2.5 font-display text-sm font-bold whitespace-nowrap text-white transition-colors duration-200 hover:bg-hijau-700 sm:block lg:ml-0 ml-auto"
     >
       Daftar PPDB
     </Link>
@@ -134,7 +134,7 @@ function NavigasiMobile() {
   }, [terbuka]);
 
   return (
-    <div className="lg:hidden">
+    <div className="ml-auto sm:ml-0 lg:hidden">
       <button
         ref={refTombol}
         type="button"
