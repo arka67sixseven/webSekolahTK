@@ -28,7 +28,7 @@ export function Header() {
 function Logo() {
   return (
     <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-      <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-2xl border-2 border-hijau-900 bg-white transition-transform duration-200 group-hover:-rotate-3">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl transition-transform duration-200 group-hover:-rotate-3">
         <Image
           src={site.logoRingkas}
           alt={`Logo ${site.nama}`}
