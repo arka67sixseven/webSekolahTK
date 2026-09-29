@@ -130,6 +130,15 @@ tayang. Berkas yang tidak diperiksa: `*.generated.ts` dan `README.md`.
 Halaman `/galeri` memakai `searchParams` untuk saringan kategori, jadi
 halaman ini bukan static. Sisa halaman seluruhnya static HTML.
 
+### Deploy: GitHub + Vercel
+
+- Repositori: `https://github.com/cortezrk/webSekolahTK` (branch `dev`).
+- Proyek Vercel: `websekolah-tk`, akun `arkajawir`.
+- URL produksi: `https://websekolah-tk.vercel.app`.
+- Setiap push ke `dev` otomatis memicu build produksi (Git integration).
+- Untuk deploy manual: `vercel --prod` (token via `VERCEL_TOKEN`). Hati-hati:
+  push bersamaan bisa membuat beberapa deployment dan saling memblokir.
+
 ---
 
 ## Berkas yang perlu diketahui
