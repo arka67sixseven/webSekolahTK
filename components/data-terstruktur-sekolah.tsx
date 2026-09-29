@@ -21,6 +21,10 @@ export function DataTerstrukturSekolah() {
     alternateName: site.nama,
     description: `${site.tagline}. ${site.kutipanIndria}`,
     url: site.url,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site.url}${site.logo}`,
+    },
     telephone: site.telepon,
     email: site.email,
     address: {

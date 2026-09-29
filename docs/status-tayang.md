@@ -8,7 +8,7 @@ menunggu data resmi. Diperbarui: 29 September 2026.
 ## Ringkasan
 
 Secara teknis, program ini sudah berjalan. Yang belum ada adalah data
-resmi: nama orang, alamat, telepon, logo, foto, dan berita.
+resmi: nama orang, alamat, telepon, foto, dan berita. Logo sudah terpasang.
 
 **Situs ini belum boleh tayang.** Pita peringatan placeholder masih
 aktif secara sengaja.
@@ -62,8 +62,12 @@ membaca kode:
       "Sarmiati, S.Pd." sebagai contoh.
 - [ ] **Struktur organisasi** — `data/profil.ts`. Empat nama masih contoh.
 - [ ] **Prestasi** — `data/profil.ts`. Tiga prestasi masih contoh.
-- [ ] **Logo resmi** — `public/images/logo/`. Tiga berkas sekarang
-      adalah placeholder yang dibuat otomatis.
+- [ ] **Logo resmi** — `public/images/logo/`. Logo yang tampil sekarang
+      adalah logo asli Taman Indria Jetis (dipotong dari gambar hasil
+      pencarian Google, latar hitam sudah dihilangkan). Kalau sekolah punya
+      berkas logo resmi dengan latar transparan, ganti `logo.png`,
+      `logo-mark.png`, dan `app/icon.png` untuk kualitas cetak yang lebih
+      baik.
 - [ ] **Foto kepala TK, guru, kelas** — `public/images/`.
 - [ ] **Kalender dan tanggal PPDB** — `data/tahun-ajar.ts`.
 - [ ] **Berita resmi** — `data/berita.generated.ts` masih berisi posting

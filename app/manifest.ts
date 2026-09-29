@@ -6,7 +6,7 @@ import { site } from "@/data/site";
  * ============
  *
  * Membuat situs bisa dipasang di layar utama ponsel orang tua.
- * Ikon masih placeholder karena logo resmi TK belum tersedia.
+ * Ikon memakai logo resmi TK Taman Indria Jetis.
  */
 export const dynamic = "force-static";
 

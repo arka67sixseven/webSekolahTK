@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -27,8 +28,15 @@ export function Header() {
 function Logo() {
   return (
     <Link href="/" className="group flex shrink-0 items-center gap-2.5">
-      <span className="grid h-11 w-11 place-items-center rounded-2xl border-[3px] border-hijau-900 bg-kunyit-400 transition-transform duration-200 group-hover:-rotate-3">
-        <span className="font-display text-xl font-extrabold text-hijau-900">TI</span>
+      <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-2xl border-2 border-hijau-900 bg-white transition-transform duration-200 group-hover:-rotate-3">
+        <Image
+          src={site.logoRingkas}
+          alt={`Logo ${site.nama}`}
+          width={44}
+          height={44}
+          priority
+          className="h-full w-full object-contain"
+        />
       </span>
       <span className="leading-tight">
         <span className="block font-display text-base font-extrabold text-hijau-900">

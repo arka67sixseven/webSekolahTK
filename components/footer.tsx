@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { alamatSatuBaris, linkPeta, linkWa, navRingkas, ppdbMulai, ppdbSelesai, site, tahunPpdb } from "@/data/site";
 
@@ -9,10 +10,14 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="grid h-12 w-12 place-items-center rounded-2xl border-[3px] border-kunyit-400 bg-kunyit-400">
-              <span className="font-display text-xl font-extrabold text-hijau-900">
-                TI
-              </span>
+            <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-2xl border-[3px] border-kunyit-400 bg-white p-0.5">
+              <Image
+                src={site.logoRingkas}
+                alt={`Logo ${site.nama}`}
+                width={48}
+                height={48}
+                className="h-full w-full object-contain"
+              />
             </span>
             <span className="font-display text-lg font-extrabold text-white">
               {site.nama}
