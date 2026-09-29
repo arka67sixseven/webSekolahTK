@@ -53,8 +53,8 @@ export const site = {
   whatsapp: "+6281390252587",
   email: "info@tktamanindriajetis.sch.id",
 
-  /** Placeholder — ganti dengan domain resmi. */
-  url: "https://tk-taman-indria-jetis.vercel.app",
+  /** Domain produksi Vercel. Ganti kalau memakai domain khusus. */
+  url: "https://websekolah-tk.vercel.app",
 
   petaKunci: "TK Taman Indria Jetis Yogyakarta",
 
