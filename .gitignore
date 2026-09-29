@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# testing
+coverage/
+
+# next.js
+.next/
+out/
+build/
+next-env.d.ts
+
+# deployment
+.vercel
+
+# misc
+.DS_Store
+*.pem
+
+# artefak browser dari tool verifikasi
+.playwright-mcp/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+!.env.example
+
+# typescript
+*.tsbuildinfo
+
+# CATATAN: `data/berita.generated.ts` dan `public/images/berita/`
+# SENGAJA ikut di-commit. Keduanya dibutuhkan agar `next build` di
+# Vercel berhasil tanpa menjalankan `npm run sync:berita` lebih dulu.

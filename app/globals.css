@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---------------------------------------------------------------
+     Tipografi
+     Baloo 2  -> display (judul, angka, nama sekolah)
+     Nunito   -> body (paragraf, navigasi, label)
+     Keduanya variabel, self-hosted lewat next/font (2 berkas woff2)
+  --------------------------------------------------------------- */
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-baloo), var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------------------------------------------------------------
+     HIJAU "DAUN MUDA" — warna utama Tamansiswa, disegarkan
+     Hijau hutan tua ala SMP -> hijau daun yang hidup & sedikit ke arah kuning.
+  --------------------------------------------------------------- */
+  --color-hijau-50: #f0fbf3;
+  --color-hijau-100: #dcf6e3;
+  --color-hijau-200: #bcebcb;
+  --color-hijau-300: #8bd9a8;
+  --color-hijau-400: #54c07e;
+  --color-hijau-500: #2ca65c;
+  --color-hijau-600: #17803f;
+  --color-hijau-700: #136634;
+  --color-hijau-800: #0f4d28;
+  --color-hijau-900: #0b3a20;
+  --color-hijau-950: #05200f;
+
+  /* ---------------------------------------------------------------
+     KUNYIT "SAFFRON" — aksen keemasan
+     Di web SMP emas hanya goresan kecil; di sini kunyit jadi PERMUKAAN
+     utama: pita penuh, blok bingkai, tombol. Hines-emas yang menyala.
+  --------------------------------------------------------------- */
+  --color-kunyit-50: #fffaeb;
+  --color-kunyit-100: #fff1c6;
+  --color-kunyit-200: #ffe08a;
+  --color-kunyit-300: #ffce4d;
+  --color-kunyit-400: #fdbb24;
+  --color-kunyit-500: #f0a300;
+  --color-kunyit-600: #c98404;
+  --color-kunyit-700: #a16705;
+  --color-kunyit-800: #7a4e08;
+  --color-kunyit-900: #5c3b0b;
+  --color-kunyit-950: #331f04;
+
+  /* ---------------------------------------------------------------
+     TERONG "CORAL" — hue ketiga, hanya untuk momen anak
+     (kartu kelompok, kegiatan, metode, PPD). Web SMP tidak punya padanannya.
+  --------------------------------------------------------------- */
+  --color-terong-50: #fff3f5;
+  --color-terong-100: #ffe3e8;
+  --color-terong-200: #ffc6d1;
+  --color-terong-300: #ff9db0;
+  --color-terong-400: #f9708c;
+  --color-terong-500: #e8455f;
+  --color-terong-600: #c22a46;
+  --color-terong-700: #9c1f38;
+  --color-terong-800: #7c1a2f;
+  --color-terong-900: #651827;
+  --color-terong-950: #390a13;
+
+  /* ---------------------------------------------------------------
+     KERTAS — netral hangat. Netral saja; halaman didominasi
+     hijau & kunyit, bukan krem.
+  --------------------------------------------------------------- */
+  --color-kertas-50: #fefdfa;
+  --color-kertas-100: #f7f5ee;
+  --color-kertas-200: #efebdf;
+  --color-kertas-300: #e1dac7;
+  --color-kertas-400: #c9bfa6;
+
+  --color-ink: #252a24;
+  --color-ink-soft: #5c635a;
+
+  /* Radius — bahasa bentuk "balok": besar & membulat, bukan pill tipis */
+  --radius-balok: 2rem;
+  --radius-balok-lg: 2.75rem;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #252a24;
+  --header-h: 4.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+}
+
+/* Cincin fokus keyboard yang konsisten di seluruh situs.
+   Web SMP hanya mengandalkan default browser di desain yang penuh hover. */
+:focus-visible {
+  outline: 3px solid var(--color-kunyit-500);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+::selection {
+  background: var(--color-kunyit-200);
+  color: var(--color-hijau-900);
+}
+
+/* ------------------------------------------------------------------
+   Gerak
+   Hanya transform & opacity — tidak ada animasi layout/width/height.
+   Setiap keyframe punya pasangan @media reduce di bawah.
+------------------------------------------------------------------ */
+
+/* Blok balok di hero: bergoyang naik-turun pelan, tiap balok punya
+   offset negatif supaya tidak berayun serempak. */
+@keyframes balok-goyang {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0) rotate(1.5deg);
+  }
+}
+
+@keyframes masuk-dari-bawah {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Munculnya blok bingkai foto */
+@keyframes balok-masuk {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes muter-pelan {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Pengganti Typography plugin yang ringan */
+  .prose-tk > p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: var(--color-ink-soft);
+  }
+  .prose-tk > p:last-child {
+    margin-bottom: 0;
+  }
+  .prose-tk strong {
+    color: var(--color-hijau-800);
+    font-weight: 700;
+  }
+  .prose-tk a {
+    color: var(--color-hijau-700);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Pola titik halus untuk latar section yang playful.
+     Murni CSS — tidak menambah request gambar. */
+  .pola-titik {
+    background-image: radial-gradient(
+      currentColor 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Sembunyikan scrollbar tapi tetap bisa di-scroll (galeri) */
+  .tanpa-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .tanpa-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Geser baris tengah panah scroll galeri ke tengah agar
+     area tengah tetap bisa diklik-scroll */
+  .tembus {
+    pointer-events: none;
+  }
+
+  .reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .reveal-terlihat {
+    animation: masuk-dari-bawah 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Hormati preferensi sistem. Ini tidak ada sama sekali di web SMP —
+   32 partikel debu + scroll-behavior: smooth terus jalan untuk semua orang.
+------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+  }
+}
+
+@media print {
+  .reveal {
+    opacity: 1;
+  }
+}
