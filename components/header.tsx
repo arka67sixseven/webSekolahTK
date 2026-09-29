@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { nav, site, tahunSekarang } from "@/data/site";
 
 /**
@@ -158,66 +159,69 @@ function NavigasiMobile() {
         </span>
       </button>
 
-      {terbuka ? (
-        <>
-          <div
-            className="fixed inset-0 z-40 bg-hijau-900/40"
-            onClick={tutup}
-            aria-hidden="true"
-          />
-          <nav
-            id={idMenu}
-            aria-label="Navigasi mobile"
-            className="fixed inset-y-0 right-0 z-50 w-[min(22rem,88vw)] overflow-y-auto border-l-4 border-hijau-900 bg-kertas-50 px-5 py-6"
-          >
-            <p className="font-display text-lg font-extrabold text-hijau-900">
-              {site.nama}
-            </p>
-            <p className="mt-1 text-xs text-ink-soft">
-              Tahun ajaran {tahunSekarang}
-            </p>
-            <ul className="mt-6 space-y-1">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={tutup}
-                    className={`block rounded-2xl px-4 py-3 font-display text-base font-bold ${
-                      aktif(pathname, item.href)
-                        ? "bg-hijau-600 text-white"
-                        : "text-hijau-900 hover:bg-kunyit-100"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.children ? (
-                    <ul className="mt-1 space-y-0.5 border-l-2 border-kertas-300 pl-3">
-                      {item.children.map((sub) => (
-                        <li key={sub.href}>
-                          <Link
-                            href={sub.href}
-                            onClick={tutup}
-                            className="block rounded-xl px-3 py-2 text-sm font-semibold text-ink-soft hover:bg-kertas-100 hover:text-hijau-800"
-                          >
-                            {sub.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/ppdb"
-              onClick={tutup}
-              className="mt-6 block rounded-2xl bg-kunyit-500 px-5 py-3 text-center font-display font-bold text-hijau-900"
-            >
-              Daftar PPDB
-            </Link>
-          </nav>
-        </>
-      ) : null}
+      {terbuka
+        ? createPortal(
+            <>
+              <div
+                className="fixed inset-0 z-40 bg-hijau-900/40"
+                onClick={tutup}
+                aria-hidden="true"
+              />
+              <nav
+                id={idMenu}
+                aria-label="Navigasi mobile"
+                className="fixed inset-y-0 right-0 z-50 w-[min(22rem,88vw)] overflow-y-auto border-l-4 border-hijau-900 bg-kertas-50 px-5 py-6"
+              >
+                <p className="font-display text-lg font-extrabold text-hijau-900">
+                  {site.nama}
+                </p>
+                <p className="mt-1 text-xs text-ink-soft">
+                  Tahun ajaran {tahunSekarang}
+                </p>
+                <ul className="mt-6 space-y-1">
+                  {nav.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={tutup}
+                        className={`block rounded-2xl px-4 py-3 font-display text-base font-bold ${
+                          aktif(pathname, item.href)
+                            ? "bg-hijau-600 text-white"
+                            : "text-hijau-900 hover:bg-kunyit-100"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                      {item.children ? (
+                        <ul className="mt-1 space-y-0.5 border-l-2 border-kertas-300 pl-3">
+                          {item.children.map((sub) => (
+                            <li key={sub.href}>
+                              <Link
+                                href={sub.href}
+                                onClick={tutup}
+                                className="block rounded-xl px-3 py-2 text-sm font-semibold text-ink-soft hover:bg-kertas-100 hover:text-hijau-800"
+                              >
+                                {sub.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/ppdb"
+                  onClick={tutup}
+                  className="mt-6 block rounded-2xl bg-kunyit-500 px-5 py-3 text-center font-display font-bold text-hijau-900"
+                >
+                  Daftar PPDB
+                </Link>
+              </nav>
+            </>,
+            document.body,
+          )
+        : null}
     </div>
   );
 }
