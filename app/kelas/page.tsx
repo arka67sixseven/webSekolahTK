@@ -163,15 +163,24 @@ function BagianRombel() {
 function BagianSuasana() {
   return (
     <section id="suasana" className="mx-auto max-w-6xl scroll-mt-32 px-4 py-20">
-      <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <BingkaiBalok warna="kunyit" miring={-4} className="mx-auto w-full max-w-sm">
-          <PlaceholderFoto
-            label="Ruang kelas"
-            warna="kunyit"
-            aspect="aspect-4/3"
-            className="border-0"
-          />
-        </BingkaiBalok>
+      <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="flex flex-col gap-6">
+          {["Ruang kelas", "Area bermain", "Kegiatan bermain"].map((nama) => (
+            <BingkaiBalok
+              key={nama}
+              warna="kunyit"
+              miring={-4}
+              className="mx-auto w-full max-w-sm"
+            >
+              <PlaceholderFoto
+                label={nama}
+                warna="kunyit"
+                aspect="aspect-4/3"
+                className="border-0"
+              />
+            </BingkaiBalok>
+          ))}
+        </div>
         <div>
           <JudulSeksi
             label="Suasana belajar"

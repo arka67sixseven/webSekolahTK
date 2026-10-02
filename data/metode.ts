@@ -23,6 +23,8 @@ export type Metode = {
   contoh: string[];
   warna: WarnaTema;
   ikon: "among" | "dolanan" | "indra" | "wira" | "keluarga";
+  /** Foto ilustrasi metode, dilokalkan di public/images/metode/. */
+  foto: string;
 };
 
 export const metode: Metode[] = [
@@ -41,6 +43,7 @@ export const metode: Metode[] = [
     ],
     warna: "hijau",
     ikon: "among",
+    foto: "/images/metode/among.webp",
   },
   {
     id: "dolanan",
@@ -57,6 +60,7 @@ export const metode: Metode[] = [
     ],
     warna: "kunyit",
     ikon: "dolanan",
+    foto: "/images/metode/dolanan-anak.webp",
   },
   {
     id: "panca-indra",
@@ -73,6 +77,7 @@ export const metode: Metode[] = [
     ],
     warna: "daun",
     ikon: "indra",
+    foto: "/images/metode/panca-indra.webp",
   },
   {
     id: "wira-wiri",
@@ -89,6 +94,7 @@ export const metode: Metode[] = [
     ],
     warna: "hijau",
     ikon: "wira",
+    foto: "/images/metode/wira-wiri.webp",
   },
   {
     id: "orang-tua",
@@ -105,6 +111,7 @@ export const metode: Metode[] = [
     ],
     warna: "daun",
     ikon: "keluarga",
+    foto: "/images/metode/kemitraan.webp",
   },
 ];
 

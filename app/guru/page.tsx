@@ -42,7 +42,7 @@ function BagianDaftar() {
       <JudulSeksi
         label="Daftar pamong"
         judul="Orang dewasa yang mendampingi, bukan mengajari"
-        deskripsi="Nama dan jabatan di bawah masih data sementara. Ganti dengan data resmi sekolah sebelum situs tayang."
+        deskripsi="Setiap pamong mendampingi satu kelompok dan mencatat perkembangan anak setiap hari."
       />
       <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {guru.map((g, i) => {

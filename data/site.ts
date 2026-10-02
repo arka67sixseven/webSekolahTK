@@ -30,28 +30,33 @@ export const site = {
   kutipanIndria:
     "Taman Indria mendidik anak dengan cara membimbing, bukan memaksa.",
 
-  // CATATAN: alamat, telepon, dan email di bawah masih data sementara
-  // yang disalin dari web SMP Taman Dewasa Jetis (satu kompleks Tamansiswa
-  // Jetis). Ganti dengan data resmi TK sebelum situs tayang.
+  // CATATAN: alamat, telepon, dan email di bawah adalah data resmi dari
+  // pihak sekolah TK Taman Indria Jetis.
   //
   // Alamat ditulis per bagian, bukan satu kalimat panjang, karena JSON-LD
   // untuk Google Maps butuh jalan, locality, region, dan kode pos terpisah.
   // `alamat` dan `alamatPendek` diturunkan dari bagian-bagian ini supaya
   // tidak ada dua sumber yang bisa berbeda.
   alamat: {
-    jalan: "Jl. A.M. Sangaji No. 39",
+    jalan: "Jl. Cokrokusuman JT II No. 878",
     kelurahan: "Cokrodiningratan",
     kecamatan: "Jetis",
     kota: "Yogyakarta",
     provinsi: "Daerah Istimewa Yogyakarta",
-    kodePos: "55573",
+    kodePos: "55233",
     negara: "ID",
   },
 
-  telepon: "(0274) 587022",
-  teleponTel: "+622518486667",
-  whatsapp: "+6281390252587",
-  email: "info@tktamanindriajetis.sch.id",
+  telepon: "(0274) 545517",
+  teleponTel: "+62274545517",
+  whatsapp: "+6283821692794",
+  email: "tamanindriajetis02@gmail.com",
+
+  /** Nomor WhatsApp kontak informasi dan pendaftaran. */
+  kontakWhatsapp: [
+    { nama: "Bu Titin", nomor: "083821692794", tel: "+6283821692794" },
+    { nama: "Bu Nurul", nomor: "085786634044", tel: "+6285786634044" },
+  ],
 
   /** Domain produksi Vercel. Ganti kalau memakai domain khusus. */
   url: "https://websekolah-tk.vercel.app",

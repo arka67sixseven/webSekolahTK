@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { BingkaiBalok } from "@/components/bingkai-balok";
 import { KepalaHalaman } from "@/components/kepala-halaman";
@@ -118,12 +119,24 @@ function BagianMetode({ item }: { item: (typeof metode)[number] }) {
             miring={item.warna === "hijau" ? 4 : item.warna === "kunyit" ? -4 : 3}
             className="mx-auto w-full max-w-sm"
           >
-            <PlaceholderFoto
-              label={item.nama}
-              warna={item.warna}
-              aspect="aspect-4/3"
-              className="border-0"
-            />
+            {item.foto ? (
+              <div className="relative aspect-4/3 w-full overflow-hidden">
+                <Image
+                  src={item.foto}
+                  alt={`Ilustrasi metode ${item.nama} di ${site.nama}`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <PlaceholderFoto
+                label={item.nama}
+                warna={item.warna}
+                aspect="aspect-4/3"
+                className="border-0"
+              />
+            )}
           </BingkaiBalok>
         </div>
       </div>

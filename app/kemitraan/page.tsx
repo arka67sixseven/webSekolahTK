@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { BingkaiBalok } from "@/components/bingkai-balok";
 import { KepalaHalaman } from "@/components/kepala-halaman";
 import { JudulSeksi } from "@/components/judul-seksi";
 import { KontenSementara } from "@/components/konten-sementara";
@@ -40,26 +42,41 @@ export default function HalamanKemitraan() {
 function BagianBentuk() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-20">
-      <JudulSeksi
-        label="Bentuk kerja sama"
-        judul="Empat agenda yang sudah jadwal"
-        deskripsi="Tidak perlu konfirmasi lebih dulu. Semua agenda ada di kalender sekolah dan di buku penghubung."
-      />
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
-        {bentukKemitraan.map((b) => (
-          <article
-            key={b.id}
-            className={`rounded-[1.75rem] border-4 border-hijau-900 p-6 ${WARNA[b.warna]}`}
-          >
-            <p className="text-xs font-bold tracking-wider text-ink-soft uppercase">
-              {b.waktu}
-            </p>
-            <h2 className="mt-2 font-display text-xl font-bold text-hijau-900">
-              {b.nama}
-            </h2>
-            <p className="mt-2 leading-relaxed text-ink-soft">{b.isi}</p>
-          </article>
-        ))}
+      <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <BingkaiBalok warna="hijau" miring={3} className="mx-auto w-full max-w-sm">
+          <div className="relative aspect-4/3 w-full overflow-hidden">
+            <Image
+              src="/images/metode/kemitraan.webp"
+              alt={`Orang tua dan anak berjalan bergandengan, ilustrasi kemitraan ${site.nama}`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 384px"
+              className="object-cover"
+            />
+          </div>
+        </BingkaiBalok>
+        <div>
+          <JudulSeksi
+            label="Bentuk kerja sama"
+            judul="Empat agenda yang sudah jadwal"
+            deskripsi="Tidak perlu konfirmasi lebih dulu. Semua agenda ada di kalender sekolah dan di buku penghubung."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {bentukKemitraan.map((b) => (
+              <article
+                key={b.id}
+                className={`rounded-[1.75rem] border-4 border-hijau-900 p-6 ${WARNA[b.warna]}`}
+              >
+                <p className="text-xs font-bold tracking-wider text-ink-soft uppercase">
+                  {b.waktu}
+                </p>
+                <h2 className="mt-2 font-display text-xl font-bold text-hijau-900">
+                  {b.nama}
+                </h2>
+                <p className="mt-2 leading-relaxed text-ink-soft">{b.isi}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

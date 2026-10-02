@@ -4,7 +4,7 @@ import { KepalaHalaman } from "@/components/kepala-halaman";
 import { JudulSeksi } from "@/components/judul-seksi";
 import { KontenSementara } from "@/components/konten-sementara";
 import { PlaceholderFoto } from "@/components/placeholder-foto";
-import { alamatSatuBaris, alamatPendek, linkPeta, linkWa, site } from "@/data/site";
+import { alamatSatuBaris, alamatPendek, linkPeta, site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Kontak",
@@ -84,12 +84,15 @@ function BagianKontak() {
               nilai={site.telepon}
               href={`tel:${site.teleponTel}`}
             />
-            <BarisKontak
-              label="WhatsApp"
-              nilai={site.whatsapp}
-              href={linkWa}
-              eksternal
-            />
+            {site.kontakWhatsapp.map((k) => (
+              <BarisKontak
+                key={k.tel}
+                label={`WhatsApp - ${k.nama}`}
+                nilai={`${k.nama}: ${k.nomor}`}
+                href={`https://wa.me/${k.tel.replace("+", "")}`}
+                eksternal
+              />
+            ))}
             <BarisKontak label="Email" nilai={site.email} href={`mailto:${site.email}`} />
           </dl>
         </div>
