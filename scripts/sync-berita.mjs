@@ -11,10 +11,8 @@
  * Jalankan: npm run sync:berita
  *
  * CATATAN PENTING
- * Endpoint scraper di bawah saat ini mengembalikan data dari akun
- * SMP Taman Dewasa Jetis, bukan TK Taman Indria Jetis. Skrip ini hanya
- * dipakai untuk mengisi halaman berita sementara. Ganti ENDPOINT dan
- * cek hasilnya sebelum situs tayang.
+ * Endpoint scraper di bawah mengembalikan data dari akun Instagram
+ * resmi TK Taman Indria Jetis (@tamanindriajetis).
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -27,7 +25,7 @@ const run = promisify(execFile);
 const ROOT = new URL("..", import.meta.url).pathname;
 const ENDPOINT =
   process.env.BERITA_ENDPOINT ??
-  "https://scrap-ig-apify-u55q.vercel.app/api/instagram/";
+  "https://api-ig-ruddy.vercel.app/api/berita/sekolah/tamanindriajetis";
 const OUT_GAMBAR = join(ROOT, "public/images/berita");
 const OUT_DATA = join(ROOT, "data/berita.generated.ts");
 
@@ -132,10 +130,14 @@ async function main() {
       ringkas: paragraf[0]?.slice(0, 160) ?? "",
       isi: paragraf,
       gambar,
-      jenis:
-        item.type === "Video" ? "Video" : item.type === "Carousel" ? "Galeri" : "Foto",
+      jenis: (function () {
+        const tipe = String(item.type ?? "").toLowerCase();
+        if (tipe === "video") return "Video";
+        if (tipe === "carousel") return "Galeri";
+        return "Foto";
+      })(),
       tautan: item.post_url ?? "",
-      jumlahSuka: item.likes_count ?? 0,
+      jumlahSuka: item.likes ?? item.likes_count ?? 0,
       urutan: items.length - index,
     });
   }
@@ -149,8 +151,8 @@ async function main() {
  * Jumlah entri: ${berita.length}
  * Diperbarui: ${new Date().toISOString()}
  *
- * PERINGATAN: data di bawah masih berasal dari akun Instagram
- * SMP Taman Dewasa Jetis, bukan TK Taman Indria Jetis.
+ * PERINGATAN: data berasal dari akun Instagram resmi
+ * TK Taman Indria Jetis (@tamanindriajetis).
  */
 
 export type Berita = {

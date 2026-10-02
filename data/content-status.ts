@@ -3,10 +3,13 @@
  * ========================
  *
  * Data asli TK Taman Indria Jetis belum diterima dari sekolah.
- * SELURUH konten identitas, guru, kelas, kegiatan, dan berita di situs ini
+ * SELURUH konten identitas, guru, kelas, dan kegiatan di situs ini
  * masih memakai data sementara yang diambil dari:
  *   - website & Instagram SMP Taman Dewasa Jetis (web sibling)
  *   - pengetahuan umum tentang Taman Indria / sistem Taman Siswa
+ *
+ * Kecuali halaman BERITA: kini mengambil posting Instagram resmi
+ * TK Taman Indria Jetis (@tamanindriajetis) via `npm run sync:berita`.
  *
  * Yang WAJIB dilakukan sekolah sebelum situs ini tayang:
  *   1. Ganti seluruh isi folder `data/` dengan data asli TK.
